@@ -1,0 +1,22 @@
+<script>
+var PrimeFilter = function(){};
+PrimeFilter.prototype.filter = function(number){
+    if(number<=1){
+        return false;
+    }
+    for(var i=2; i<number; i++){
+        if(number % i === 0){
+            return false;
+        }
+    }
+    return true;
+};
+
+var app = new PrimeFilter();
+
+for(var i=1; i<1000; i++){
+    if(app.filter(i)){
+        console.log(i);
+    }
+}
+</script>
